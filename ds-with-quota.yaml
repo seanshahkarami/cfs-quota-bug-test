@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: cfs-quota-bug-test
+  labels:
+    app.kubernetes.io/name: cfs-quota-bug-test
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: cfs-quota-bug-test
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: cfs-quota-bug-test
+    spec:
+      containers:
+        - image: seanshahkarami/cfs-quota-bug-test
+          name: cfs-quota-bug-test
+          args: ["-iterations", "1000", "-sleep", "1000ms"]
+          resources:
+            requests:
+              cpu: 200m
+              memory: 50Mi
+            limits:
+              cpu: 200m
+              memory: 50Mi
