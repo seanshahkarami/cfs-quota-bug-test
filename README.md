@@ -12,9 +12,9 @@ This repo contains a Dockerized version of this very helpful post: [Overly aggre
 
 The high level summary here is, we run a test case which has a well defined work period of 5ms and _should not_ experience throttling.
 
-When no cpu quotas are used, it runs as expected and the main work loop completes consistently in about 5ms.
-
-When quotas are used, I've random it runs as expected and the main work loop completes consistently in about 5ms.
+If your kernel is affected by this problem, you'll see:
+* When no cpu quotas are used, it runs as expected and the main work loop completes consistently in about 5ms.
+* When cpu quotas are used, I've random it runs as expected and the main work loop completes consistently in about 5ms.
 
 ## Running with Docker
 
