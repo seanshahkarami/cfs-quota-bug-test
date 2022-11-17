@@ -30,10 +30,22 @@ docker run --rm -it --cpu-quota 20000 --cpu-period 100000 seanshahkarami/cfs-quo
 
 ## Running with Kubernetes
 
+The single job can be run using:
+
 ```sh
 # test without quotas
 kubectl apply -f job-without-quota.yaml
 
 # test with quotas
 kubectl apply -f job-with-quota.yaml
+```
+
+In a multinode cluster, you can also run the test on every node using:
+
+```sh
+# test without quotas
+kubectl apply -f ds-without-quota.yaml
+
+# test with quotas
+kubectl apply -f ds-with-quota.yaml
 ```
