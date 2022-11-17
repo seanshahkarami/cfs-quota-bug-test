@@ -1,0 +1,13 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: cfs-quota-bug-test-without-quota
+spec:
+  ttlSecondsAfterFinished: 300
+  template:
+    spec:
+      containers:
+      - name: cfs-quota-bug-test-without-quota
+        image: seanshahkarami/cfs-quota-bug-test
+        args: ["-iterations", "1000", "-sleep", "200ms"]
+      restartPolicy: Never
