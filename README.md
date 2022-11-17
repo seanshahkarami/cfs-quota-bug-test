@@ -14,7 +14,9 @@ The high level summary here is, we run a test case which has a well defined work
 
 If your kernel is affected by this problem, you'll see:
 * When no cpu quotas are used, it runs as expected and the main work loop completes consistently in about 5ms.
-* When cpu quotas are used, I've random it runs as expected and the main work loop completes consistently in about 5ms.
+* When cpu quotas are used, the main work loop randomly takes around 100ms to complete instead. (And I've seen it in occur in long bursts.)
+
+That's something like a 20x drop in performance for unclear reasons and this is for a pretty clean example. In more complicated, multiprocess applications like RabbitMQ, I'm not sure how bad this gets.
 
 ## Running with Docker
 
