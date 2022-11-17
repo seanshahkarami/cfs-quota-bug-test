@@ -1,3 +1,5 @@
+// Source of this is Ivan Babrou's Overly aggressive CFS post:
+// https://gist.github.com/bobrik/2030ff040fad360327a5fab7a09c4ff1
 package main
 
 import (
